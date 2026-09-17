@@ -1,0 +1,865 @@
+import React, { useState } from "react";
+import "./App.css";
+
+const PROFILE_URL = "https://linktr.ee/justfaizalam";
+const EMAIL = "JustFaizAlam@gmail.com";
+
+const socials = [
+  {
+    name: "Instagram",
+    short: "Instagram",
+    url: "https://www.instagram.com/justfaizalam/",
+    type: "instagram",
+  },
+  {
+    name: "Facebook",
+    short: "Facebook",
+    url: "https://www.facebook.com/people/Faiz-Alam/61586561875916/",
+    type: "facebook",
+  },
+  {
+    name: "YouTube",
+    short: "YouTube",
+    url: "https://www.youtube.com/@JustFaizAlam",
+    type: "youtube",
+  },
+  {
+    name: "X",
+    short: "X",
+    url: "https://x.com/JustFaizAlam",
+    type: "x",
+  },
+];
+
+const links = [
+  {
+    number: "01",
+    title: "YouTube",
+    subtitle: "Videos & conversations",
+    url: "https://www.youtube.com/@JustFaizAlam",
+    type: "youtube",
+  },
+  {
+    number: "02",
+    title: "Instagram",
+    subtitle: "Moments & updates",
+    url: "https://www.instagram.com/justfaizalam/",
+    type: "instagram",
+  },
+  {
+    number: "03",
+    title: "Facebook",
+    subtitle: "Connect with me",
+    url: "https://www.facebook.com/people/Faiz-Alam/61586561875916/",
+    type: "facebook",
+  },
+  {
+    number: "04",
+    title: "X",
+    subtitle: "Thoughts & conversations",
+    url: "https://x.com/JustFaizAlam",
+    type: "x",
+  },
+];
+
+/* =====================================================
+   ICONS
+===================================================== */
+
+function Icon({ type }) {
+  if (type === "instagram") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect
+          x="3"
+          y="3"
+          width="18"
+          height="18"
+          rx="5"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <circle
+          cx="12"
+          cy="12"
+          r="4"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" />
+      </svg>
+    );
+  }
+
+  if (type === "facebook") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M14.25 21v-8h2.7l.4-3h-3.1V8.1c0-.9.3-1.5 1.6-1.5h1.7V4c-.3 0-1.4-.1-2.6-.1-2.6 0-4.4 1.6-4.4 4.5V10H7.7v3h2.8v8h3.75Z"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "youtube") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.7 31.7 0 0 0 0 12a31.7 31.7 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.7 31.7 0 0 0 24 12a31.7 31.7 0 0 0-.5-5.8ZM9.5 15.7V8.3l6.4 3.7-6.4 3.7Z"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "mail") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect
+          x="3"
+          y="5"
+          width="18"
+          height="14"
+          rx="3"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+        <path
+          d="m5 7 7 6 7-6"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "copy") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <rect
+          x="8"
+          y="8"
+          width="11"
+          height="11"
+          rx="2"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+        <path
+          d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "share") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          fill="currentColor"
+          d="M18 8a3 3 0 1 0-2.83-4A3 3 0 0 0 15 5c0 .22.02.43.07.64L8.91 9.08A3 3 0 0 0 7 8a3 3 0 1 0 0 6c.7 0 1.34-.24 1.85-.65l6.16 3.44A3 3 0 0 0 15 18a3 3 0 1 0 .95-2.19l-6.14-3.43c.12-.37.19-.77.19-1.18 0-.38-.07-.75-.18-1.09l6.18-3.45C16.55 7.5 17.23 8 18 8Z"
+        />
+      </svg>
+    );
+  }
+
+  if (type === "link") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path
+          d="M10 13a5 5 0 0 0 7.07.07l2-2A5 5 0 0 0 12 4l-1.15 1.15"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+        <path
+          d="M14 11a5 5 0 0 0-7.07-.07l-2 2A5 5 0 0 0 12 20l1.15-1.15"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.8"
+          strokeLinecap="round"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M18.9 2H22l-6.8 7.8L23.2 22h-6.2l-4.8-6.2L6.8 22H3.7l7.2-8.3L3.1 2h6.3l4.3 5.7L18.9 2Zm-1.1 17.9h1.7L8.6 4H6.8l11 15.9Z"
+      />
+    </svg>
+  );
+}
+
+/* =====================================================
+   APP
+===================================================== */
+
+function App() {
+  const [shareOpen, setShareOpen] = useState(false);
+  const [emailOpen, setEmailOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const [nativeShared, setNativeShared] = useState(false);
+
+  /* =====================================================
+     OPEN LINK
+  ===================================================== */
+
+  const openLink = (url) => {
+    if (!url) return;
+
+    window.open(
+      url,
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  /* =====================================================
+     COPY EXACT PROFILE URL
+  ===================================================== */
+
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(PROFILE_URL);
+
+      setCopied(true);
+
+      setTimeout(() => {
+        setCopied(false);
+      }, 1800);
+    } catch (error) {
+      // Fallback for browsers where Clipboard API is unavailable
+      try {
+        const textarea = document.createElement("textarea");
+
+        textarea.value = PROFILE_URL;
+        textarea.style.position = "fixed";
+        textarea.style.opacity = "0";
+
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+
+        document.execCommand("copy");
+        textarea.remove();
+
+        setCopied(true);
+
+        setTimeout(() => {
+          setCopied(false);
+        }, 1800);
+      } catch (fallbackError) {
+        console.error("Copy failed:", fallbackError);
+      }
+    }
+  };
+
+  /* =====================================================
+     NATIVE SHARE
+  ===================================================== */
+
+  const nativeShare = async () => {
+    if (!navigator.share) return;
+
+    try {
+      await navigator.share({
+        title: "JustFaizAlam",
+        text: "Connect with Faiz Alam — JustFaizAlam",
+        url: PROFILE_URL,
+      });
+
+      setNativeShared(true);
+
+      setTimeout(() => {
+        setNativeShared(false);
+      }, 1800);
+    } catch (error) {
+      // User cancelled native share — no action needed.
+      if (error?.name !== "AbortError") {
+        console.error("Native share failed:", error);
+      }
+    }
+  };
+
+  /* =====================================================
+     SOCIAL SHARE
+  ===================================================== */
+
+  const shareTo = (type) => {
+    const url = encodeURIComponent(PROFILE_URL);
+    const text = encodeURIComponent(
+      "Connect with Faiz Alam — JustFaizAlam"
+    );
+
+    const shareUrls = {
+      x: `https://twitter.com/intent/tweet?text=${text}&url=${url}`,
+
+      facebook:
+        `https://www.facebook.com/sharer/sharer.php?u=${url}`,
+
+      whatsapp:
+        `https://wa.me/?text=${encodeURIComponent(
+          `Connect with Faiz Alam — JustFaizAlam\n${PROFILE_URL}`
+        )}`,
+
+      linkedin:
+        `https://www.linkedin.com/sharing/share-offsite/?url=${url}`,
+
+      email:
+        `mailto:?subject=${encodeURIComponent(
+          "JustFaizAlam"
+        )}&body=${encodeURIComponent(
+          `Connect with Faiz Alam — JustFaizAlam\n\n${PROFILE_URL}`
+        )}`,
+    };
+
+    if (!shareUrls[type]) return;
+
+    if (type === "email") {
+      window.location.href = shareUrls[type];
+      return;
+    }
+
+    window.open(
+      shareUrls[type],
+      "_blank",
+      "noopener,noreferrer"
+    );
+  };
+
+  /* =====================================================
+     EMAIL
+  ===================================================== */
+
+  const openEmail = () => {
+    window.location.href = `mailto:${EMAIL}`;
+  };
+
+  return (
+    <div className="page">
+
+      {/* =================================================
+          PROFILE CARD
+      ================================================= */}
+
+      <main className="card">
+
+        {/* HEADER */}
+
+        <header className="topbar">
+
+          {/* REDESIGNED FA LOGO */}
+
+          <button
+            className="fa-logo"
+            aria-label="FA Logo"
+            onClick={() => window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            })}
+          >
+            <span className="logo-f">F</span>
+            <span className="logo-a">A</span>
+            <span className="logo-line" />
+            <span className="logo-dot" />
+          </button>
+
+          {/* SHARE */}
+
+          <button
+            className="share-trigger"
+            onClick={() => setShareOpen(true)}
+            aria-label="Share profile"
+          >
+            <Icon type="share" />
+            <span>SHARE</span>
+          </button>
+
+        </header>
+
+        {/* =================================================
+            HERO
+        ================================================= */}
+
+        <section className="hero">
+
+          <div className="portrait-wrap">
+
+            <img
+              src="/Images/dp.png"
+              alt="Faiz Alam"
+              className="portrait"
+            />
+
+            <div className="portrait-fade" />
+
+            <div className="portrait-meta">
+              <span>FA / 01</span>
+              <span>JUSTFAIZALAM</span>
+            </div>
+
+          </div>
+
+          <div className="identity">
+
+            <div className="identity-label">
+              <span className="label-line" />
+              CREATIVE / PERSONAL
+              <span className="label-line" />
+            </div>
+
+            <h1>
+              JustFaiz
+              <em>Alam</em>
+            </h1>
+
+            <p>
+              Faiz Alam — A person whose knowledge,
+              thoughts, and good deeds bring benefit
+              and light to the world.
+            </p>
+
+          </div>
+
+        </section>
+
+        {/* =================================================
+            SOCIAL TABS
+        ================================================= */}
+
+        <nav className="social-tabs">
+
+          {socials.map((social) => (
+            <button
+              key={social.type}
+              className={`social-tab ${social.type}`}
+              onClick={() => openLink(social.url)}
+              type="button"
+            >
+              <span className="tab-icon">
+                <Icon type={social.type} />
+              </span>
+
+              <span className="tab-name">
+                {social.name}
+              </span>
+            </button>
+          ))}
+
+        </nav>
+
+        {/* =================================================
+            LINKS
+        ================================================= */}
+
+        <section className="links-section">
+
+          <div className="section-heading">
+            <span>ELSEWHERE</span>
+            <div />
+            <small>05</small>
+          </div>
+
+          <div className="links">
+
+            {links.map((link) => (
+              <button
+                className={`link-card ${link.type}`}
+                key={link.type}
+                onClick={() => openLink(link.url)}
+                type="button"
+              >
+
+                <span className="link-number">
+                  {link.number}
+                </span>
+
+                <span className="link-platform">
+                  <Icon type={link.type} />
+                </span>
+
+                <span className="link-content">
+                  <strong>{link.title}</strong>
+                  <small>{link.subtitle}</small>
+                </span>
+
+                <span className="link-arrow">
+                  ↗
+                </span>
+
+              </button>
+            ))}
+
+            {/* EMAIL */}
+
+            <button
+              className={`link-card email ${
+                emailOpen ? "email-active" : ""
+              }`}
+              onClick={() => setEmailOpen(!emailOpen)}
+              type="button"
+            >
+
+              <span className="link-number">
+                05
+              </span>
+
+              <span className="link-platform">
+                <Icon type="mail" />
+              </span>
+
+              <span className="link-content">
+                <strong>Email</strong>
+
+                <small>
+                  {emailOpen
+                    ? EMAIL
+                    : "Let's talk directly"}
+                </small>
+              </span>
+
+              <span className="link-arrow">
+                {emailOpen ? "↓" : "↗"}
+              </span>
+
+            </button>
+
+            {emailOpen && (
+              <button
+                className="email-open"
+                onClick={openEmail}
+                type="button"
+              >
+                <span>{EMAIL}</span>
+                <strong>OPEN MAIL ↗</strong>
+              </button>
+            )}
+
+          </div>
+
+        </section>
+
+        {/* FOOTER */}
+
+        <footer>
+
+          <div className="footer-brand">
+            <span>F</span>
+            <i>A</i>
+          </div>
+
+          <span>JUSTFAIZALAM</span>
+
+          <div className="footer-line" />
+
+          <span>2026</span>
+
+        </footer>
+
+      </main>
+
+      {/* =================================================
+          SHARE MODAL
+      ================================================= */}
+
+      {shareOpen && (
+        <div
+          className="share-overlay"
+          onClick={() => setShareOpen(false)}
+          role="presentation"
+        >
+
+          <div
+            className="share-sheet"
+            onClick={(e) => e.stopPropagation()}
+            role="dialog"
+            aria-modal="true"
+            aria-label="Share profile"
+          >
+
+            {/* MODAL TOP HANDLE */}
+
+            <div className="share-handle" />
+
+            {/* MODAL HEADER */}
+
+            <div className="share-header">
+
+              <div className="share-title-wrap">
+
+                <div className="share-eyebrow">
+                  <span />
+                  SHARE PROFILE
+                  <span />
+                </div>
+
+                <h2>
+                  Let people{" "}
+                  <em>find you.</em>
+                </h2>
+
+                <p>
+                  Share the complete JustFaizAlam
+                  profile with anyone.
+                </p>
+
+              </div>
+
+              <button
+                className="close-share"
+                onClick={() => setShareOpen(false)}
+                aria-label="Close share dialog"
+                type="button"
+              >
+                <span />
+                <span />
+              </button>
+
+            </div>
+
+            {/* PROFILE URL */}
+
+            <div className="profile-url-box">
+
+              <div className="url-icon">
+                <Icon type="link" />
+              </div>
+
+              <div className="url-content">
+                <span>PROFILE LINK</span>
+                <strong>{PROFILE_URL}</strong>
+              </div>
+
+              <button
+                className={`url-copy ${copied ? "success" : ""}`}
+                onClick={copyLink}
+                type="button"
+              >
+                <Icon type="copy" />
+                <span>
+                  {copied ? "COPIED" : "COPY"}
+                </span>
+              </button>
+
+            </div>
+
+            {/* SHARE PREVIEW */}
+
+            <div className="share-preview">
+
+              <div className="preview-glow preview-glow-one" />
+              <div className="preview-glow preview-glow-two" />
+
+              <div className="preview-top">
+
+                <div className="preview-mark">
+                  <span>F</span>
+                  <i>A</i>
+                  <b />
+                </div>
+
+                <span>
+                  PROFILE / 01
+                </span>
+
+              </div>
+
+              <div className="preview-main">
+
+                <div className="preview-image">
+                  <img
+                    src="/Images/dp.png"
+                    alt="Faiz Alam"
+                  />
+                </div>
+
+                <div className="preview-info">
+
+                  <small>JUSTFAIZALAM</small>
+
+                  <h3>
+                    JustFaiz
+                    <em>Alam</em>
+                  </h3>
+
+                  <p>
+                    /justfaizalam
+                  </p>
+
+                </div>
+
+              </div>
+
+              <div className="preview-bottom">
+
+                <span>
+                  CONNECT · FOLLOW · SHARE
+                </span>
+
+                <span>FA</span>
+
+              </div>
+
+            </div>
+
+            {/* NATIVE SHARE */}
+
+            {"share" in navigator && (
+              <button
+                className="native-share"
+                onClick={nativeShare}
+                type="button"
+              >
+                <span className="native-share-icon">
+                  <Icon type="share" />
+                </span>
+
+                <span>
+                  {nativeShared
+                    ? "Profile shared!"
+                    : "Share via device"}
+                </span>
+
+                <span className="native-share-arrow">
+                  →
+                </span>
+              </button>
+            )}
+
+            {/* SHARE OPTIONS */}
+
+            <div className="share-section-label">
+              <span>SHARE ON</span>
+              <div />
+            </div>
+
+            <div className="share-options">
+
+              {/* COPY */}
+
+              <button
+                className={`share-option copy ${
+                  copied ? "is-copied" : ""
+                }`}
+                onClick={copyLink}
+                type="button"
+              >
+                <span className="option-icon">
+                  <Icon type="copy" />
+                  {copied && (
+                    <span className="option-check">
+                      ✓
+                    </span>
+                  )}
+                </span>
+
+                <span>
+                  {copied ? "Copied" : "Copy link"}
+                </span>
+              </button>
+
+              {/* X */}
+
+              <button
+                className="share-option"
+                onClick={() => shareTo("x")}
+                type="button"
+              >
+                <span className="option-icon x-icon">
+                  X
+                </span>
+
+                <span>X</span>
+              </button>
+
+              {/* FACEBOOK */}
+
+              <button
+                className="share-option"
+                onClick={() => shareTo("facebook")}
+                type="button"
+              >
+                <span className="option-icon facebook-icon">
+                  <Icon type="facebook" />
+                </span>
+
+                <span>Facebook</span>
+              </button>
+
+              {/* WHATSAPP */}
+
+              <button
+                className="share-option"
+                onClick={() => shareTo("whatsapp")}
+                type="button"
+              >
+                <span className="option-icon whatsapp-icon">
+                  <span>W</span>
+                </span>
+
+                <span>WhatsApp</span>
+              </button>
+
+              {/* LINKEDIN */}
+
+              <button
+                className="share-option"
+                onClick={() => shareTo("linkedin")}
+                type="button"
+              >
+                <span className="option-icon linkedin-icon">
+                  in
+                </span>
+
+                <span>LinkedIn</span>
+              </button>
+
+              {/* EMAIL */}
+
+              <button
+                className="share-option"
+                onClick={() => shareTo("email")}
+                type="button"
+              >
+                <span className="option-icon email-share-icon">
+                  <Icon type="mail" />
+                </span>
+
+                <span>Email</span>
+              </button>
+
+            </div>
+
+            {/* SHARE FOOTER */}
+
+            <div className="share-footer">
+              <span>JUSTFAIZALAM</span>
+              <div />
+              <span>CONNECT · FOLLOW · SHARE</span>
+            </div>
+
+          </div>
+
+        </div>
+      )}
+
+    </div>
+  );
+}
+
+export default App;
