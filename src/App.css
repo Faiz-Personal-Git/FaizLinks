@@ -1,11 +1,10 @@
-@import url(
-  "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
 );
 
 
-/* =====================================================
+/* =========================================================
    RESET
-===================================================== */
+========================================================= */
 
 * {
   margin: 0;
@@ -36,74 +35,251 @@ button {
 }
 
 
-/* =====================================================
-   THEME VARIABLES
-===================================================== */
+/* =========================================================
+   DEFAULT THEME
+========================================================= */
 
 :root {
-  --paper: #e8ece9;
-  --paper-dark: #dfe5e1;
+  --accent: #b86645;
+  --accent-dark: #914a32;
 
-  --ink: #252927;
-  --muted: #7d8580;
+  --theme-bg: #e5d2c8;
+  --theme-surface: #eee1da;
 
-  --accent: #b86745;
-  --accent-dark: #9e5236;
-  --accent-soft: #eadbd3;
+  --theme-card: #f7eee9;
+  --theme-card-hover: #fff7f2;
 
-  --white: #f8faf8;
+  --theme-border: rgba(145, 74, 50, 0.15);
+  --theme-line: rgba(145, 74, 50, 0.19);
 
-  --line: rgba(35, 41, 38, 0.11);
-
-  --theme-bg: #e8ece9;
-  --theme-card: #edf0ee;
+  --theme-text: #332a27;
+  --theme-muted: #857269;
 }
 
 
-/* =====================================================
-   THEMES
-===================================================== */
+/* =========================================================
+   01 — BURNT SIENNA
+========================================================= */
 
 .theme-terracotta {
-  --accent: #b86745;
-  --accent-dark: #964e34;
-  --accent-soft: #eadbd3;
+  --accent: #b86645;
+  --accent-dark: #914a32;
 
-  --theme-bg: #e8ece9;
-  --theme-card: #edf0ee;
+  --theme-bg: #e5d2c8;
+  --theme-surface: #eee1da;
+
+  --theme-card: #f7eee9;
+  --theme-card-hover: #fff7f2;
+
+  --theme-border: rgba(145, 74, 50, 0.15);
+  --theme-line: rgba(145, 74, 50, 0.19);
+
+  --theme-text: #332a27;
+  --theme-muted: #857269;
 }
 
-.theme-olive {
-  --accent: #68715b;
-  --accent-dark: #515a46;
-  --accent-soft: #dfe4d8;
 
-  --theme-bg: #e9ece6;
-  --theme-card: #eef1eb;
+/* =========================================================
+   02 — CHAMPAGNE GOLD
+========================================================= */
+
+.theme-champagne {
+  --accent: #b99a62;
+  --accent-dark: #947744;
+
+  --theme-bg: #e8e0d0;
+  --theme-surface: #eee8dc;
+
+  --theme-card: #f8f4eb;
+  --theme-card-hover: #fffdf7;
+
+  --theme-border: rgba(148, 119, 68, 0.16);
+  --theme-line: rgba(148, 119, 68, 0.2);
+
+  --theme-text: #353129;
+  --theme-muted: #817966;
 }
 
-.theme-blue {
-  --accent: #52738a;
-  --accent-dark: #3d5d72;
-  --accent-soft: #dce6ec;
 
-  --theme-bg: #e7ecef;
-  --theme-card: #edf1f3;
+/* =========================================================
+   03 — DEEP EMERALD
+========================================================= */
+
+.theme-emerald {
+  --accent: #3f7565;
+  --accent-dark: #2d5b4d;
+
+  --theme-bg: #d7e3de;
+  --theme-surface: #e3ebe7;
+
+  --theme-card: #f2f6f3;
+  --theme-card-hover: #fbfdfc;
+
+  --theme-border: rgba(45, 91, 77, 0.15);
+  --theme-line: rgba(45, 91, 77, 0.19);
+
+  --theme-text: #29352f;
+  --theme-muted: #6e7e76;
 }
+
+
+/* =========================================================
+   04 — MIDNIGHT NAVY
+========================================================= */
+
+.theme-navy {
+  --accent: #4d647d;
+  --accent-dark: #354d66;
+
+  --theme-bg: #d7e0e7;
+  --theme-surface: #e2e9ee;
+
+  --theme-card: #f1f5f8;
+  --theme-card-hover: #fbfdff;
+
+  --theme-border: rgba(53, 77, 102, 0.15);
+  --theme-line: rgba(53, 77, 102, 0.2);
+
+  --theme-text: #29333c;
+  --theme-muted: #6d7a85;
+}
+
+
+/* =========================================================
+   05 — ROYAL PLUM
+========================================================= */
 
 .theme-plum {
-  --accent: #805d72;
-  --accent-dark: #69485c;
-  --accent-soft: #e8dfe5;
+  --accent: #806078;
+  --accent-dark: #66495e;
 
-  --theme-bg: #eae7e9;
-  --theme-card: #f0edef;
+  --theme-bg: #e3d9e1;
+  --theme-surface: #ebe4e9;
+
+  --theme-card: #f5f0f4;
+  --theme-card-hover: #fdfafd;
+
+  --theme-border: rgba(102, 73, 94, 0.15);
+  --theme-line: rgba(102, 73, 94, 0.2);
+
+  --theme-text: #352d33;
+  --theme-muted: #7b7078;
 }
 
 
-/* =====================================================
+/* =========================================================
+   06 — ESPRESSO
+========================================================= */
+
+.theme-espresso {
+  --accent: #795d4d;
+  --accent-dark: #5d4538;
+
+  --theme-bg: #e3d8d0;
+  --theme-surface: #ebe2dc;
+
+  --theme-card: #f5efeb;
+  --theme-card-hover: #fdf9f6;
+
+  --theme-border: rgba(93, 69, 56, 0.15);
+  --theme-line: rgba(93, 69, 56, 0.2);
+
+  --theme-text: #342d29;
+  --theme-muted: #7f736c;
+}
+
+
+/* =========================================================
+   07 — GRAPHITE
+========================================================= */
+
+.theme-charcoal {
+  --accent: #59615e;
+  --accent-dark: #414946;
+
+  --theme-bg: #dce0de;
+  --theme-surface: #e5e8e6;
+
+  --theme-card: #f3f5f4;
+  --theme-card-hover: #fcfdfc;
+
+  --theme-border: rgba(65, 73, 70, 0.15);
+  --theme-line: rgba(65, 73, 70, 0.2);
+
+  --theme-text: #292d2b;
+  --theme-muted: #707875;
+}
+
+
+/* =========================================================
+   08 — DUSTY ROSE
+========================================================= */
+
+.theme-rose {
+  --accent: #a66f73;
+  --accent-dark: #875459;
+
+  --theme-bg: #e7d7d9;
+  --theme-surface: #eee2e4;
+
+  --theme-card: #f8f0f1;
+  --theme-card-hover: #fff8f9;
+
+  --theme-border: rgba(135, 84, 89, 0.15);
+  --theme-line: rgba(135, 84, 89, 0.2);
+
+  --theme-text: #382d2f;
+  --theme-muted: #806f72;
+}
+
+
+/* =========================================================
+   09 — PURE WHITE
+========================================================= */
+
+.theme-white {
+  --accent: #6d6d6d;
+  --accent-dark: #454545;
+
+  --theme-bg: #ffffff;
+  --theme-surface: #ffffff;
+
+  --theme-card: #fafafa;
+  --theme-card-hover: #ffffff;
+
+  --theme-border: rgba(0, 0, 0, 0.08);
+  --theme-line: rgba(0, 0, 0, 0.12);
+
+  --theme-text: #202220;
+  --theme-muted: #777b78;
+}
+
+
+/* =========================================================
+   10 — PURE BLACK
+========================================================= */
+
+.theme-black {
+  --accent: #d0a86e;
+  --accent-dark: #a77e45;
+
+  --theme-bg: #111311;
+  --theme-surface: #171a18;
+
+  --theme-card: #202421;
+  --theme-card-hover: #272c29;
+
+  --theme-border: rgba(255, 255, 255, 0.09);
+  --theme-line: rgba(255, 255, 255, 0.13);
+
+  --theme-text: #f2f1ec;
+  --theme-muted: #929894;
+}
+
+
+/* =========================================================
    PAGE
-===================================================== */
+========================================================= */
 
 .page {
   min-height: 100vh;
@@ -115,23 +291,19 @@ button {
   padding: 24px;
 
   background:
-    radial-gradient(
-      circle at 15% 15%,
+    radial-gradient(circle at 15% 15%,
       #303432 0,
-      transparent 27%
-    ),
-    radial-gradient(
-      circle at 85% 85%,
+      transparent 27%),
+    radial-gradient(circle at 85% 85%,
       #242725 0,
-      transparent 28%
-    ),
+      transparent 28%),
     #151716;
 }
 
 
-/* =====================================================
-   CARD
-===================================================== */
+/* =========================================================
+   MAIN CARD
+========================================================= */
 
 .card {
   width: 100%;
@@ -147,28 +319,29 @@ button {
   border-radius: 32px;
 
   background:
-    linear-gradient(
-      180deg,
-      var(--theme-card) 0%,
-      var(--theme-bg) 60%,
-      color-mix(
-        in srgb,
-        var(--theme-bg) 88%,
-        #cdd5d0
-      ) 100%
-    );
+    linear-gradient(180deg,
+      var(--theme-surface) 0%,
+      var(--theme-bg) 55%,
+      var(--theme-bg) 100%);
+
+  color: var(--theme-text);
 
   box-shadow:
     0 35px 90px rgba(0, 0, 0, 0.4);
+
+  transition:
+    background 0.45s ease,
+    color 0.45s ease;
 }
 
 
-/* =====================================================
-   TOPBAR
-===================================================== */
+/* =========================================================
+   TOP BAR
+========================================================= */
 
 .topbar {
   position: absolute;
+
   z-index: 50;
 
   top: 15px;
@@ -181,136 +354,253 @@ button {
 }
 
 
-/* =====================================================
-   UNIQUE FA LOGO
-   NO BACKGROUND
-===================================================== */
+/* =========================================================
+   PREMIUM FA LOGO
+========================================================= */
+
+/* =========================================================
+   NEW PREMIUM FA MONOGRAM
+   No circle / No box / No diagonal
+========================================================= */
 
 .fa-logo {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
 
   position: relative;
 
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border: none;
   background: transparent;
 
-  cursor: default;
+  z-index: 20;
+
+  pointer-events: none;
 }
 
-.fa-logo::before {
-  content: "";
+.fa-logo-svg {
+  width: 48px;
+  height: 48px;
 
-  position: absolute;
+  display: block;
 
-  left: 5px;
-  top: 5px;
+  overflow: visible;
 
-  width: 41px;
-  height: 41px;
+  filter:
+    drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.48);
 
-  border-radius: 50%;
+/* F */
+
+.fa-new-f {
+  fill: none;
+
+  stroke: #fffaf0;
+
+  stroke-width: 7;
+
+  stroke-linecap: square;
+
+  stroke-linejoin: miter;
+
+  filter:
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+}
+
+
+/* A */
+
+.fa-new-a {
+  fill: none;
+
+  stroke: var(--accent);
+
+  stroke-width: 7;
+
+  stroke-linecap: square;
+
+  stroke-linejoin: miter;
+
+  filter:
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.4));
+
+  transition:
+    stroke 0.4s ease;
+}
+
+
+/* A crossbar */
+
+.fa-new-a-bar {
+  fill: none;
+
+  stroke: var(--accent);
+
+  stroke-width: 5;
+
+  stroke-linecap: square;
+
+  transition:
+    stroke 0.4s ease;
+}
+
+
+/* Premium little accent */
+
+.fa-new-accent {
+  fill: none;
+
+  stroke: #fffaf0;
+
+  stroke-width: 2;
+
+  stroke-linecap: round;
 
   opacity: 0.8;
 }
 
-.logo-f,
-.logo-a {
-  position: absolute;
 
-  font-family: "Playfair Display", serif;
-  font-weight: 700;
+/* Accent dot */
 
-  line-height: 1;
+.fa-new-dot {
+  fill: var(--accent);
 
-  z-index: 2;
-}
+  stroke: #fffaf0;
 
-.logo-f {
-  left: 11px;
-  top: 8px;
+  stroke-width: 1.5;
 
-  font-size: 29px;
-
-  color: #f5f1e9;
-
-  transform: rotate(-5deg);
-}
-
-.logo-a {
-  left: 25px;
-  top: 20px;
-
-  font-size: 29px;
-
-  font-style: italic;
-
-  color: var(--accent);
-
-  transform: rotate(-7deg);
-}
-
-.logo-cut {
-  position: absolute;
-
-  z-index: 3;
-
-  left: 6px;
-  top: 28px;
-
-  width: 43px;
-  height: 1px;
-
-  background: rgba(255, 255, 255, 0.55);
-
-  transform: rotate(-48deg);
-}
-
-.logo-dot {
-  position: absolute;
-
-  z-index: 4;
-
-  right: 4px;
-  top: 6px;
-
-  width: 6px;
-  height: 6px;
-
-  border-radius: 50%;
-
-  background: var(--accent);
-
-  box-shadow:
-    0 0 0 4px
-    color-mix(
-      in srgb,
-      var(--accent) 14%,
-      transparent
-    );
+  transition:
+    fill 0.4s ease;
 }
 
 
-/* =====================================================
+/* Outer ring */
+
+.fa-logo-ring {
+  fill: rgba(18, 21, 20, 0.18);
+
+  stroke: rgba(255, 249, 238, 0.72);
+
+  stroke-width: 1.4;
+
+  transition:
+    stroke 0.4s ease,
+    fill 0.4s ease;
+}
+
+
+/* F */
+
+.fa-logo-f {
+  fill: none;
+
+  stroke: #fff8ec;
+
+  stroke-width: 7;
+
+  stroke-linecap: square;
+
+  stroke-linejoin: miter;
+
+  filter:
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+
+  transition:
+    stroke 0.4s ease;
+}
+
+
+/* A */
+
+.fa-logo-a {
+  fill: none;
+
+  stroke: var(--accent);
+
+  stroke-width: 7;
+
+  stroke-linecap: square;
+
+  stroke-linejoin: miter;
+
+  filter:
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.45));
+
+  transition:
+    stroke 0.4s ease;
+}
+
+
+/* A bar */
+
+.fa-logo-a-bar {
+  fill: none;
+
+  stroke: var(--accent);
+
+  stroke-width: 5;
+
+  stroke-linecap: square;
+
+  filter:
+    drop-shadow(0 1px 2px rgba(0, 0, 0, 0.35));
+
+  transition:
+    stroke 0.4s ease;
+}
+
+
+/* Diagonal */
+
+.fa-logo-cut {
+  fill: none;
+
+  stroke: rgba(255, 248, 236, 0.7);
+
+  stroke-width: 1.6;
+
+  stroke-linecap: round;
+}
+
+
+/* Dot */
+
+.fa-logo-dot {
+  fill: var(--accent);
+
+  stroke: #fff8ec;
+
+  stroke-width: 1.5;
+
+  filter:
+    drop-shadow(0 2px 4px color-mix(in srgb,
+        var(--accent) 45%,
+        transparent));
+
+  transition:
+    fill 0.4s ease;
+}
+
+
+/* =========================================================
    TOP ACTIONS
-===================================================== */
+========================================================= */
 
 .top-actions {
   display: flex;
+
   align-items: center;
+
   gap: 7px;
 }
 
 
-/* =====================================================
-   SHARE BUTTON
-   ICON ONLY
-===================================================== */
+/* =========================================================
+   SHARE BUTTON — ICON ONLY
+========================================================= */
 
 .share-trigger {
   width: 40px;
@@ -322,8 +612,8 @@ button {
   align-items: center;
   justify-content: center;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.75);
+  border:
+    1px solid rgba(255, 255, 255, 0.75);
 
   border-radius: 50%;
 
@@ -349,8 +639,7 @@ button {
     rgba(255, 255, 255, 0.96);
 
   box-shadow:
-    0 8px 18px
-    rgba(30, 35, 32, 0.1);
+    0 8px 18px rgba(30, 35, 32, 0.1);
 }
 
 .share-trigger:active {
@@ -363,9 +652,9 @@ button {
 }
 
 
-/* =====================================================
-   COLOR PICKER
-===================================================== */
+/* =========================================================
+   THEME BUTTON
+========================================================= */
 
 .theme-picker {
   position: relative;
@@ -375,14 +664,14 @@ button {
   width: 40px;
   height: 40px;
 
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
 
-  gap: 5px;
-
-  border: 1px solid
-    rgba(255, 255, 255, 0.75);
+  border:
+    1px solid rgba(255, 255, 255, 0.75);
 
   border-radius: 50%;
 
@@ -413,148 +702,257 @@ button {
 }
 
 .theme-current-dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
 
   position: absolute;
 
-  top: 8px;
-  right: 8px;
+  top: 7px;
+  right: 7px;
 
   border-radius: 50%;
 
   background: var(--accent);
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.8);
+  border:
+    1px solid rgba(255, 255, 255, 0.9);
+
+  box-shadow:
+    0 0 0 2px color-mix(in srgb,
+      var(--accent) 18%,
+      transparent);
 }
 
 
-/* =====================================================
-   THEME MENU
-===================================================== */
+/* =========================================================
+   PREMIUM THEME DROPDOWN
+========================================================= */
 
 .theme-menu {
   position: absolute;
 
-  top: 48px;
+  top: 49px;
   right: 0;
 
-  width: 150px;
+  width: 190px;
 
-  padding: 10px;
+  padding: 9px;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.8);
+  border:
+    1px solid rgba(255, 255, 255, 0.9);
 
-  border-radius: 17px;
+  border-radius: 19px;
 
   background:
-    rgba(248, 250, 248, 0.97);
+    linear-gradient(145deg,
+      rgba(255, 255, 255, 0.98),
+      rgba(239, 242, 239, 0.96));
 
   box-shadow:
-    0 18px 40px
-    rgba(0, 0, 0, 0.16);
+    0 22px 55px rgba(0, 0, 0, 0.2),
 
-  backdrop-filter: blur(18px);
+    0 2px 8px rgba(0, 0, 0, 0.06);
+
+  backdrop-filter: blur(22px);
+
+  -webkit-backdrop-filter: blur(22px);
 
   animation:
-    themeMenuIn 0.18s ease;
+    themeMenuIn 0.2s cubic-bezier(.22, .8, .25, 1);
 }
 
 @keyframes themeMenuIn {
   from {
     opacity: 0;
-    transform: translateY(-5px) scale(0.96);
+
+    transform:
+      translateY(-5px) scale(0.96);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+
+    transform:
+      translateY(0) scale(1);
   }
 }
 
+
+/* Dropdown heading */
+
 .theme-menu-title {
-  padding: 4px 6px 8px;
-
-  color: #8b928e;
-
-  font-size: 5.5px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-}
-
-.theme-list {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-
-.theme-item {
-  width: 100%;
-
-  min-height: 34px;
+  padding:
+    6px 8px 9px;
 
   display: flex;
   align-items: center;
 
-  gap: 8px;
+  gap: 7px;
 
-  padding: 5px 7px;
+  color: #777e79;
 
-  border: none;
-  border-radius: 10px;
+  font-size: 5.5px;
+
+  font-weight: 700;
+
+  letter-spacing: 1.7px;
+}
+
+.theme-menu-title::before {
+  content: "";
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+
+  box-shadow:
+    0 0 0 3px color-mix(in srgb,
+      var(--accent) 12%,
+      transparent);
+}
+
+.theme-list {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+
+/* Theme item */
+
+.theme-item {
+  width: 100%;
+
+  min-height: 37px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  padding: 6px 8px;
+
+  border:
+    1px solid transparent;
+
+  border-radius: 12px;
 
   background: transparent;
 
-  color: #414743;
+  color: #424844;
 
   font-size: 8px;
+
   font-weight: 600;
 
   cursor: pointer;
 
   text-align: left;
+
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .theme-item:hover {
-  background: #edf0ed;
+  background:
+    rgba(235, 238, 235, 0.9);
+
+  transform:
+    translateX(2px);
 }
 
 .theme-item.active {
   background:
-    color-mix(
-      in srgb,
-      var(--accent) 10%,
-      white
-    );
+    color-mix(in srgb,
+      var(--accent) 9%,
+      white);
+
+  border-color:
+    color-mix(in srgb,
+      var(--accent) 17%,
+      transparent);
 }
 
+
+/* Color circle */
+
 .theme-swatch {
-  width: 17px;
-  height: 17px;
+  width: 22px;
+  height: 22px;
 
   flex-shrink: 0;
 
+  position: relative;
+
   border-radius: 50%;
 
+  border:
+    2px solid rgba(255, 255, 255, 0.85);
+
   box-shadow:
-    inset 0 0 0 1px
-    rgba(0, 0, 0, 0.08);
+    0 2px 6px rgba(0, 0, 0, 0.13),
+
+    inset 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+
+.theme-swatch::after {
+  content: "";
+
+  position: absolute;
+
+  left: 4px;
+  top: 3px;
+
+  width: 6px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(255, 255, 255, 0.5);
+
+  transform:
+    rotate(-35deg);
 }
 
 .theme-item b {
+  width: 18px;
+  height: 18px;
+
   margin-left: auto;
 
-  color: var(--accent);
+  display: flex;
 
-  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background:
+    var(--accent);
+
+  color: white;
+
+  font-size: 9px;
+
+  box-shadow:
+    0 3px 8px color-mix(in srgb,
+      var(--accent) 25%,
+      transparent);
 }
 
 
-/* =====================================================
+/* =========================================================
    HERO
-===================================================== */
+========================================================= */
 
 .hero {
   height: 455px;
@@ -583,11 +981,11 @@ button {
   display: block;
 
   object-fit: cover;
+
   object-position: center top;
 
   filter:
-    saturate(0.9)
-    contrast(1.04);
+    saturate(0.9) contrast(1.04);
 }
 
 .portrait-fade {
@@ -600,26 +998,25 @@ button {
   height: 205px;
 
   background:
-    linear-gradient(
-      to bottom,
+    linear-gradient(to bottom,
       transparent 0%,
-      color-mix(
-        in srgb,
+
+      color-mix(in srgb,
         var(--theme-bg) 8%,
-        transparent
-      ) 25%,
-      color-mix(
-        in srgb,
-        var(--theme-bg) 34%,
-        transparent
-      ) 55%,
-      color-mix(
-        in srgb,
-        var(--theme-bg) 88%,
-        transparent
-      ) 87%,
-      var(--theme-bg) 100%
-    );
+        transparent) 25%,
+
+      color-mix(in srgb,
+        var(--theme-bg) 38%,
+        transparent) 55%,
+
+      color-mix(in srgb,
+        var(--theme-bg) 82%,
+        transparent) 83%,
+
+      var(--theme-bg) 100%);
+
+  transition:
+    background 0.45s ease;
 }
 
 .portrait-meta {
@@ -627,23 +1024,27 @@ button {
 
   left: 18px;
   right: 18px;
+
   bottom: 105px;
 
   display: flex;
+
   justify-content: space-between;
 
-  color: rgba(255, 255, 255, 0.65);
+  color:
+    rgba(255, 255, 255, 0.65);
 
   font-size: 7px;
+
   font-weight: 600;
 
   letter-spacing: 2px;
 }
 
 
-/* =====================================================
+/* =========================================================
    IDENTITY
-===================================================== */
+========================================================= */
 
 .identity {
   position: absolute;
@@ -652,6 +1053,7 @@ button {
 
   left: 16px;
   right: 16px;
+
   bottom: 9px;
 
   text-align: center;
@@ -667,9 +1069,10 @@ button {
 
   margin-bottom: 6px;
 
-  color: #818983;
+  color: var(--theme-muted);
 
   font-size: 6.5px;
+
   font-weight: 700;
 
   letter-spacing: 2px;
@@ -680,15 +1083,15 @@ button {
   height: 1px;
 
   background:
-    color-mix(
-      in srgb,
+    color-mix(in srgb,
       var(--accent) 35%,
-      transparent
-    );
+      transparent);
 }
 
 .identity h1 {
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Playfair Display",
+    serif;
 
   font-size: 39px;
 
@@ -696,16 +1099,17 @@ button {
 
   letter-spacing: -1.4px;
 
-  color: #262a28;
+  color: var(--theme-text);
+
+  transition:
+    color 0.45s ease;
 }
 
 .identity h1 em {
   font-style: italic;
+
   color: var(--accent);
 }
-
-
-/* USERNAME */
 
 .username {
   margin-top: 6px;
@@ -713,6 +1117,7 @@ button {
   color: var(--accent);
 
   font-size: 7px;
+
   font-weight: 700;
 
   letter-spacing: 1.8px;
@@ -723,7 +1128,9 @@ button {
 
   margin: 7px auto 0;
 
-  color: #454b48;
+  color: var(--theme-text);
+
+  opacity: 0.82;
 
   font-size: 10.5px;
 
@@ -731,9 +1138,9 @@ button {
 }
 
 
-/* =====================================================
+/* =========================================================
    SOCIAL TABS
-===================================================== */
+========================================================= */
 
 .social-tabs {
   display: flex;
@@ -751,11 +1158,13 @@ button {
   padding: 0 9px;
 
   display: flex;
+
   align-items: center;
 
   gap: 6px;
 
-  border: 1px solid transparent;
+  border:
+    1px solid transparent;
 
   border-radius: 12px;
 
@@ -795,9 +1204,7 @@ button {
 }
 
 
-/* =====================================================
-   ALWAYS COLORED SOCIAL ICONS
-===================================================== */
+/* Always colored */
 
 .social-tab.instagram {
   color: #c34f8d;
@@ -820,13 +1227,13 @@ button {
 
   font-weight: 600;
 
-  color: #414743;
+  color: var(--theme-text);
 }
 
 
-/* =====================================================
+/* =========================================================
    LINKS
-===================================================== */
+========================================================= */
 
 .links-section {
   padding: 0 14px;
@@ -842,8 +1249,8 @@ button {
   margin-bottom: 10px;
 }
 
-.section-heading > span {
-  color: #747c77;
+.section-heading>span {
+  color: var(--theme-muted);
 
   font-size: 6.5px;
 
@@ -852,16 +1259,16 @@ button {
   letter-spacing: 2px;
 }
 
-.section-heading > div {
+.section-heading>div {
   flex: 1;
 
   height: 1px;
 
-  background: var(--line);
+  background: var(--theme-line);
 }
 
 .section-heading small {
-  color: #9aa09c;
+  color: var(--theme-muted);
 
   font-size: 7px;
 }
@@ -875,9 +1282,9 @@ button {
 }
 
 
-/* =====================================================
+/* =========================================================
    LINK CARD
-===================================================== */
+========================================================= */
 
 .link-card {
   width: 100%;
@@ -892,15 +1299,20 @@ button {
 
   border-radius: 14px;
 
-  border: 1px solid
-    rgba(255, 255, 255, 0.75);
+  border:
+    1px solid var(--theme-border);
 
   background:
-    rgba(247, 249, 248, 0.72);
+    color-mix(in srgb,
+      var(--theme-card) 94%,
+      white);
+
+  color: var(--theme-text);
 
   box-shadow:
-    0 3px 9px
-    rgba(38, 44, 41, 0.07);
+    0 3px 9px color-mix(in srgb,
+      var(--accent) 7%,
+      transparent);
 
   cursor: pointer;
 
@@ -909,18 +1321,25 @@ button {
   transition:
     transform 0.2s ease,
     box-shadow 0.2s ease,
-    background 0.2s ease;
+    background 0.45s ease,
+    border-color 0.45s ease;
 }
 
 .link-card:hover {
   transform: translateY(-2px);
 
   background:
-    rgba(255, 255, 255, 0.9);
+    var(--theme-card-hover);
+
+  border-color:
+    color-mix(in srgb,
+      var(--accent) 24%,
+      transparent);
 
   box-shadow:
-    0 8px 18px
-    rgba(38, 44, 41, 0.1);
+    0 9px 22px color-mix(in srgb,
+      var(--accent) 10%,
+      transparent);
 }
 
 .link-card:active {
@@ -932,7 +1351,7 @@ button {
 
   flex-shrink: 0;
 
-  color: #9ba19d;
+  color: var(--theme-muted);
 
   font-size: 7px;
 
@@ -940,11 +1359,6 @@ button {
 
   text-align: center;
 }
-
-
-/* =====================================================
-   PLATFORM ICON
-===================================================== */
 
 .link-platform {
   width: 45px;
@@ -966,42 +1380,59 @@ button {
 }
 
 
-/* ALWAYS COLORED */
+/* =========================================================
+   PLATFORM COLORS
+========================================================= */
 
 .youtube .link-platform {
   color: #d94449;
-  background: #f0e0e0;
+
+  background:
+    color-mix(in srgb,
+      var(--accent) 11%,
+      var(--theme-card));
 }
 
 .instagram .link-platform {
   color: #bb4d89;
-  background: #eee0e8;
+
+  background:
+    color-mix(in srgb,
+      var(--accent) 11%,
+      var(--theme-card));
 }
 
 .facebook .link-platform {
   color: #3971b8;
-  background: #e1e9f3;
+
+  background:
+    color-mix(in srgb,
+      var(--accent) 11%,
+      var(--theme-card));
 }
 
 .x .link-platform {
   color: #262a28;
-  background: #e1e4e2;
+
+  background:
+    color-mix(in srgb,
+      var(--accent) 9%,
+      var(--theme-card));
 }
 
 .email .link-platform {
   color: var(--accent);
+
   background:
-    color-mix(
-      in srgb,
-      var(--accent) 13%,
-      white
-    );
+    color-mix(in srgb,
+      var(--accent) 15%,
+      var(--theme-card));
 }
 
 
-/* =====================================================
+/* =========================================================
    LINK CONTENT
-===================================================== */
+========================================================= */
 
 .link-content {
   flex: 1;
@@ -1018,7 +1449,7 @@ button {
 }
 
 .link-content strong {
-  color: #3c423f;
+  color: var(--theme-text);
 
   font-size: 10.5px;
 
@@ -1026,7 +1457,7 @@ button {
 }
 
 .link-content small {
-  color: #858c88;
+  color: var(--theme-muted);
 
   font-size: 8.5px;
 
@@ -1036,11 +1467,6 @@ button {
 
   text-overflow: ellipsis;
 }
-
-
-/* =====================================================
-   ARROW
-===================================================== */
 
 .link-arrow {
   width: 29px;
@@ -1055,7 +1481,7 @@ button {
 
   border-radius: 50%;
 
-  color: #747b77;
+  color: var(--theme-muted);
 
   font-size: 14px;
 
@@ -1068,17 +1494,15 @@ button {
   color: var(--accent);
 
   background:
-    color-mix(
-      in srgb,
+    color-mix(in srgb,
       var(--accent) 8%,
-      transparent
-    );
+      transparent);
 }
 
 
-/* =====================================================
+/* =========================================================
    EMAIL
-===================================================== */
+========================================================= */
 
 .email-active {
   border-bottom-left-radius: 8px;
@@ -1105,12 +1529,15 @@ button {
   border-left:
     2px solid var(--accent);
 
-  border-radius: 0 8px 8px 8px;
+  border-radius:
+    0 8px 8px 8px;
 
   background:
-    rgba(255, 255, 255, 0.45);
+    color-mix(in srgb,
+      var(--accent) 6%,
+      var(--theme-card));
 
-  color: #555c58;
+  color: var(--theme-text);
 
   cursor: pointer;
 
@@ -1140,9 +1567,9 @@ button {
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 footer {
   margin: 24px 15px 22px;
@@ -1153,7 +1580,7 @@ footer {
 
   gap: 8px;
 
-  color: #929894;
+  color: var(--theme-muted);
 
   font-size: 6.5px;
 
@@ -1161,11 +1588,13 @@ footer {
 }
 
 .footer-brand {
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Playfair Display",
+    serif;
 
   font-size: 14px;
 
-  color: #303532;
+  color: var(--theme-text);
 }
 
 .footer-brand i {
@@ -1179,13 +1608,13 @@ footer {
 
   height: 1px;
 
-  background: var(--line);
+  background: var(--theme-line);
 }
 
 
-/* =====================================================
+/* =========================================================
    SHARE OVERLAY
-===================================================== */
+========================================================= */
 
 .share-overlay {
   position: fixed;
@@ -1209,7 +1638,8 @@ footer {
 
   -webkit-backdrop-filter: blur(16px);
 
-  animation: overlayIn 0.25s ease;
+  animation:
+    overlayIn 0.25s ease;
 }
 
 @keyframes overlayIn {
@@ -1223,9 +1653,9 @@ footer {
 }
 
 
-/* =====================================================
+/* =========================================================
    SHARE SHEET
-===================================================== */
+========================================================= */
 
 .share-sheet {
   width: min(680px, 100%);
@@ -1243,19 +1673,15 @@ footer {
   border-radius: 32px;
 
   background:
-    linear-gradient(
-      145deg,
+    linear-gradient(145deg,
       #fbfcfa 0%,
-      #f2f5f2 100%
-    );
+      #f2f5f2 100%);
 
   box-shadow:
-    0 35px 100px
-    rgba(0, 0, 0, 0.38);
+    0 35px 100px rgba(0, 0, 0, 0.38);
 
   animation:
-    sheetIn 0.32s
-    cubic-bezier(.22, .8, .25, 1);
+    sheetIn 0.32s cubic-bezier(.22, .8, .25, 1);
 }
 
 @keyframes sheetIn {
@@ -1263,16 +1689,14 @@ footer {
     opacity: 0;
 
     transform:
-      translateY(22px)
-      scale(0.97);
+      translateY(22px) scale(0.97);
   }
 
   to {
     opacity: 1;
 
     transform:
-      translateY(0)
-      scale(1);
+      translateY(0) scale(1);
   }
 }
 
@@ -1281,9 +1705,9 @@ footer {
 }
 
 
-/* =====================================================
+/* =========================================================
    SHARE HEADER
-===================================================== */
+========================================================= */
 
 .share-header {
   display: flex;
@@ -1325,7 +1749,9 @@ footer {
 
   color: #242826;
 
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Playfair Display",
+    serif;
 
   font-size: 30px;
 
@@ -1351,7 +1777,9 @@ footer {
 }
 
 
-/* CLOSE */
+/* =========================================================
+   CLOSE SHARE
+========================================================= */
 
 .close-share {
   width: 40px;
@@ -1361,7 +1789,8 @@ footer {
 
   flex-shrink: 0;
 
-  border: 1px solid #e2e6e3;
+  border:
+    1px solid #e2e6e3;
 
   border-radius: 50%;
 
@@ -1403,9 +1832,9 @@ footer {
 }
 
 
-/* =====================================================
+/* =========================================================
    PROFILE URL
-===================================================== */
+========================================================= */
 
 .profile-url-box {
   display: flex;
@@ -1421,7 +1850,10 @@ footer {
 
   border-radius: 17px;
 
-  background: #e9eeeb;
+  background:
+    color-mix(in srgb,
+      var(--theme-bg) 75%,
+      white);
 }
 
 .url-icon {
@@ -1437,9 +1869,9 @@ footer {
 
   border-radius: 12px;
 
-  background: #252a27;
+  background: var(--accent);
 
-  color: #f7f5ef;
+  color: #fff;
 }
 
 .url-icon svg {
@@ -1460,7 +1892,7 @@ footer {
 }
 
 .url-content span {
-  color: #858d88;
+  color: var(--theme-muted);
 
   font-size: 5.5px;
 
@@ -1472,7 +1904,7 @@ footer {
 .url-content strong {
   min-width: 0;
 
-  color: #363d39;
+  color: var(--theme-text);
 
   font-size: 9px;
 
@@ -1485,27 +1917,35 @@ footer {
   text-overflow: ellipsis;
 }
 
+.url-copy svg {
+  width: 15px !important;
+  height: 15px !important;
+
+  max-width: 15px !important;
+  max-height: 15px !important;
+
+  flex-shrink: 0;
+}
+
 .url-copy {
-  min-width: 67px;
-  height: 36px;
+  min-width: 62px;
+  height: 34px;
+
+  padding: 0 9px;
 
   display: flex;
-
   align-items: center;
   justify-content: center;
 
   gap: 5px;
 
   border: none;
-
   border-radius: 11px;
 
   background: #282d2a;
-
   color: #fff;
 
   font-size: 6.5px;
-
   font-weight: 700;
 
   letter-spacing: 1px;
@@ -1517,19 +1957,10 @@ footer {
     background 0.2s ease;
 }
 
-.url-copy svg {
-  width: 13px;
-  height: 13px;
-}
-
 .url-copy:hover {
   transform: translateY(-1px);
 
   background: #191d1b;
-}
-
-.url-copy:active {
-  transform: scale(0.96);
 }
 
 .url-copy.success {
@@ -1537,9 +1968,9 @@ footer {
 }
 
 
-/* =====================================================
+/* =========================================================
    SHARE PREVIEW
-===================================================== */
+========================================================= */
 
 .share-preview {
   min-height: 225px;
@@ -1557,24 +1988,17 @@ footer {
   color: #f5f1e9;
 
   background:
-    radial-gradient(
-      circle at 75% 20%,
-      color-mix(
-        in srgb,
+    radial-gradient(circle at 75% 20%,
+      color-mix(in srgb,
         var(--accent) 25%,
-        transparent
-      ),
-      transparent 30%
-    ),
-    linear-gradient(
-      145deg,
+        transparent),
+      transparent 30%),
+    linear-gradient(145deg,
       #303633,
-      #202522
-    );
+      #202522);
 
   box-shadow:
-    0 14px 30px
-    rgba(30, 34, 32, 0.14);
+    0 14px 30px rgba(30, 34, 32, 0.14);
 }
 
 .share-preview::after {
@@ -1585,7 +2009,9 @@ footer {
   right: -17px;
   bottom: -52px;
 
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Playfair Display",
+    serif;
 
   font-size: 190px;
 
@@ -1613,11 +2039,9 @@ footer {
   top: -45px;
 
   background:
-    color-mix(
-      in srgb,
+    color-mix(in srgb,
       var(--accent) 12%,
-      transparent
-    );
+      transparent);
 
   filter: blur(3px);
 }
@@ -1649,18 +2073,13 @@ footer {
   justify-content: space-between;
 }
 
-.preview-top > span {
+.preview-top>span {
   font-size: 6px;
 
   letter-spacing: 2px;
 
   color: #8e9691;
 }
-
-
-/* =====================================================
-   PREVIEW FA
-===================================================== */
 
 .preview-mark {
   width: 37px;
@@ -1680,7 +2099,9 @@ footer {
   left: 7px;
   top: 4px;
 
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Playfair Display",
+    serif;
 
   font-size: 20px;
 
@@ -1693,7 +2114,9 @@ footer {
   right: 5px;
   bottom: 2px;
 
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Playfair Display",
+    serif;
 
   font-size: 19px;
 
@@ -1719,18 +2142,12 @@ footer {
   transform: rotate(-45deg);
 }
 
-
-/* =====================================================
-   PREVIEW MAIN
-===================================================== */
-
 .preview-main {
   min-height: 145px;
 
   display: flex;
 
   align-items: center;
-
   justify-content: center;
 
   gap: 24px;
@@ -1750,8 +2167,7 @@ footer {
     3px solid rgba(255, 255, 255, 0.12);
 
   box-shadow:
-    0 12px 30px
-    rgba(0, 0, 0, 0.3);
+    0 12px 30px rgba(0, 0, 0, 0.3);
 }
 
 .preview-image img {
@@ -1772,7 +2188,9 @@ footer {
 .preview-info h3 {
   margin-top: 5px;
 
-  font-family: "Playfair Display", serif;
+  font-family:
+    "Playfair Display",
+    serif;
 
   font-size: 30px;
 
@@ -1797,11 +2215,6 @@ footer {
   font-size: 9px;
 }
 
-
-/* =====================================================
-   PREVIEW BOTTOM
-===================================================== */
-
 .preview-bottom {
   display: flex;
 
@@ -1822,9 +2235,9 @@ footer {
 }
 
 
-/* =====================================================
+/* =========================================================
    NATIVE SHARE
-===================================================== */
+========================================================= */
 
 .native-share {
   width: 100%;
@@ -1842,39 +2255,25 @@ footer {
   gap: 10px;
 
   border:
-    1px solid
-    color-mix(
-      in srgb,
+    1px solid color-mix(in srgb,
       var(--accent) 15%,
-      transparent
-    );
+      transparent);
 
   border-radius: 15px;
 
   background:
-    color-mix(
-      in srgb,
+    color-mix(in srgb,
       var(--accent) 10%,
-      white
-    );
+      white);
 
   color:
-    color-mix(
-      in srgb,
+    color-mix(in srgb,
       var(--accent) 75%,
-      #333
-    );
+      #333);
 
   cursor: pointer;
 
   text-align: left;
-
-  transition:
-    transform 0.2s ease;
-}
-
-.native-share:hover {
-  transform: translateY(-1px);
 }
 
 .native-share-icon {
@@ -1889,11 +2288,9 @@ footer {
   border-radius: 10px;
 
   background:
-    color-mix(
-      in srgb,
+    color-mix(in srgb,
       var(--accent) 22%,
-      white
-    );
+      white);
 
   color: var(--accent);
 }
@@ -1903,7 +2300,7 @@ footer {
   height: 15px;
 }
 
-.native-share > span:nth-child(2) {
+.native-share>span:nth-child(2) {
   flex: 1;
 
   font-size: 8.5px;
@@ -1918,9 +2315,9 @@ footer {
 }
 
 
-/* =====================================================
+/* =========================================================
    SHARE OPTIONS
-===================================================== */
+========================================================= */
 
 .share-section-label {
   display: flex;
@@ -2010,20 +2407,7 @@ footer {
   font-weight: 500;
 
   box-shadow:
-    inset 0 1px 0
-    rgba(255, 255, 255, 0.7);
-
-  transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
-}
-
-.share-option:hover .option-icon {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 7px 15px
-    rgba(40, 46, 43, 0.1);
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .option-icon svg {
@@ -2032,7 +2416,7 @@ footer {
 }
 
 
-/* SHARE ICON COLORS */
+/* Share platform colors */
 
 .x-icon {
   background: #e5e6e5;
@@ -2063,12 +2447,15 @@ footer {
 }
 
 .email-share-icon {
-  background: #eee4dd;
+  background:
+    color-mix(in srgb,
+      var(--accent) 13%,
+      white);
 
   color: var(--accent);
 }
 
-.share-option > span:last-child {
+.share-option>span:last-child {
   max-width: 75px;
 
   overflow: hidden;
@@ -2083,9 +2470,7 @@ footer {
 }
 
 
-/* =====================================================
-   COPY SUCCESS
-===================================================== */
+/* Copy success */
 
 .share-option.copy.is-copied {
   color: var(--accent);
@@ -2115,13 +2500,14 @@ footer {
 
   font-weight: 700;
 
-  border: 2px solid #f8faf8;
+  border:
+    2px solid #f8faf8;
 }
 
 
-/* =====================================================
+/* =========================================================
    SHARE FOOTER
-===================================================== */
+========================================================= */
 
 .share-footer {
   display: flex;
@@ -2152,9 +2538,9 @@ footer {
 }
 
 
-/* =====================================================
+/* =========================================================
    FOCUS
-===================================================== */
+========================================================= */
 
 button:focus-visible {
   outline:
@@ -2164,9 +2550,9 @@ button:focus-visible {
 }
 
 
-/* =====================================================
+/* =========================================================
    MOBILE
-===================================================== */
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -2196,8 +2582,16 @@ button:focus-visible {
     font-size: 36px;
   }
 
+  .social-tabs {
+    gap: 2px;
+  }
 
-  /* SHARE */
+  .social-tab {
+    padding: 0 8px;
+  }
+
+
+  /* Mobile share sheet */
 
   .share-overlay {
     align-items: flex-end;
@@ -2210,17 +2604,18 @@ button:focus-visible {
 
     max-height: 92svh;
 
-    padding: 12px 17px 20px;
+    padding:
+      12px 17px 20px;
 
     border-radius:
       28px 28px 0 0;
 
     animation:
-      mobileSheetIn 0.35s
-      cubic-bezier(.22, .8, .25, 1);
+      mobileSheetIn 0.35s cubic-bezier(.22, .8, .25, 1);
   }
 
   @keyframes mobileSheetIn {
+
     from {
       opacity: 0;
 
@@ -2234,6 +2629,7 @@ button:focus-visible {
       transform:
         translateY(0);
     }
+
   }
 
   .share-handle {
@@ -2288,9 +2684,15 @@ button:focus-visible {
   }
 
   .url-copy {
-    min-width: 59px;
+    min-width: 58px;
+    height: 33px;
 
-    height: 34px;
+    padding: 0 8px;
+  }
+
+  .url-copy svg {
+    width: 14px !important;
+    height: 14px !important;
   }
 
   .share-preview {
@@ -2334,18 +2736,15 @@ button:focus-visible {
     margin-top: 18px;
   }
 
-
-  /* THEME MENU */
-
   .theme-menu {
     right: -42px;
   }
 }
 
 
-/* =====================================================
-   VERY SMALL MOBILE
-===================================================== */
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
 
 @media (max-width: 370px) {
 
@@ -2354,11 +2753,11 @@ button:focus-visible {
   }
 
   .social-tabs {
-    gap: 2px;
+    gap: 1px;
   }
 
   .social-tab {
-    padding: 0 8px;
+    padding: 0 7px;
   }
 
   .tab-name {
@@ -2403,16 +2802,19 @@ button:focus-visible {
 }
 
 
-/* =====================================================
+/* =========================================================
    REDUCED MOTION
-===================================================== */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
+
     animation-iteration-count: 1 !important;
+
     transition-duration: 0.01ms !important;
   }
 }

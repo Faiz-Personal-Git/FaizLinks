@@ -9,23 +9,53 @@ const EMAIL = "JustFaizAlam@gmail.com";
 const themes = [
   {
     id: "terracotta",
-    name: "Terracotta",
-    color: "#b86745",
+    name: "Burnt Sienna",
+    color: "#B86645",
   },
   {
-    id: "olive",
-    name: "Olive",
-    color: "#68715b",
+    id: "champagne",
+    name: "Champagne Gold",
+    color: "#B99A62",
   },
   {
-    id: "blue",
-    name: "Ocean",
-    color: "#52738a",
+    id: "emerald",
+    name: "Deep Emerald",
+    color: "#3F7565",
+  },
+  {
+    id: "navy",
+    name: "Midnight Navy",
+    color: "#4D647D",
   },
   {
     id: "plum",
-    name: "Plum",
-    color: "#805d72",
+    name: "Royal Plum",
+    color: "#806078",
+  },
+  {
+    id: "espresso",
+    name: "Espresso",
+    color: "#795D4D",
+  },
+  {
+    id: "charcoal",
+    name: "Graphite",
+    color: "#59615E",
+  },
+  {
+    id: "rose",
+    name: "Dusty Rose",
+    color: "#A66F73",
+  },
+  {
+    id: "white",
+    name: "Pure White",
+    color: "#FFFFFF",
+  },
+  {
+    id: "black",
+    name: "Midnight Black",
+    color: "#111311",
   },
 ];
 
@@ -239,10 +269,54 @@ function Icon({ type }) {
 function FALogo() {
   return (
     <div className="fa-logo" aria-label="FA">
-      <span className="logo-f">F</span>
-      <span className="logo-a">A</span>
-      <span className="logo-cut" />
-      <span className="logo-dot" />
+      <svg
+        viewBox="0 0 100 100"
+        className="fa-logo-svg"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* F vertical */}
+        <path
+          className="fa-new-f"
+          d="M25 73V27H59"
+        />
+
+        {/* F upper bar */}
+        <path
+          className="fa-new-f"
+          d="M25 29H58"
+        />
+
+        {/* F middle bar */}
+        <path
+          className="fa-new-f"
+          d="M25 48H51"
+        />
+
+        {/* A */}
+        <path
+          className="fa-new-a"
+          d="M43 73L64 27L85 73"
+        />
+
+        {/* A crossbar */}
+        <path
+          className="fa-new-a-bar"
+          d="M52 54H76"
+        />
+
+        {/* small premium accent */}
+        <path
+          className="fa-new-accent"
+          d="M69 19H84"
+        />
+
+        <circle
+          className="fa-new-dot"
+          cx="87"
+          cy="19"
+          r="3.5"
+        />
+      </svg>
     </div>
   );
 }
